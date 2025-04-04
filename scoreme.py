@@ -22,6 +22,10 @@ def extract_tables_from_pdf(pdf_path, output_excel):
     
     print(f"Tables extracted and saved to {output_excel}")
 
+if __name__ == "__main__":
+    pdf_path = input("Enter the path of the PDF file: ").strip()
+    extract_tables_from_pdf(pdf_path)
+
 # Usage can be done as shown below - 
 pdf_path = "test3(1)(1).pdf" 
 output_excel = "output.xlsx"
