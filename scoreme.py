@@ -2,7 +2,10 @@ import pdfplumber
 import pandas as pd
 import os
 
-def extract_tables_from_pdf(pdf_path, output_excel):
+def extract_tables_from_pdf(pdf_path, output_dir="output"):
+    os.makedirs(output_dir, exist_ok=True)  
+    output_excel = os.path.join(output_dir, os.path.basename(pdf_path).replace(".pdf", ".xlsx"))
+
     with pdfplumber.open(pdf_path) as pdf:
         tables_data = []
         
